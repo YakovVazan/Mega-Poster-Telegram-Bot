@@ -15,21 +15,23 @@ bot.onText(/\/start/, (msg: any) => {
   const welcomeMessage = `
 👋 Hi ${firstName}!
 
-Welcome to **Mega Poster** 🎉
+Welcome to the official **Mega Poster** Telegram bot 🎉
 
 Here's what you can do:
 📝 Compose posts once and publish to multiple platforms (Twitter, Telegram, LinkedIn, and more).
 🔗 Connect your social media accounts in the dashboard.
 📅 Schedule posts for later.
+📊 Track your post performance with detailed analytics.
 
 To get started:
-1. Visit our web app.
-2. Log in and connect your social accounts.
-3. Start posting!
+1. Add me (https://t.me/megaposterofficialbot) as an administrator to your channel
+2. Make sure I have permission to post messages
+3. Visit http://localhost:3000/settings/accounts
+4. Click on info button in Telegram section and follow the instructions
 
-Need help? Just send /help.
+Go to the web app at http://localhost:3000/settings/accounts to learn more.
 
-Let’s go 🚀
+See you there! 🚀
 `;
 
   bot.sendMessage(chatId, welcomeMessage, { parse_mode: "Markdown" });
