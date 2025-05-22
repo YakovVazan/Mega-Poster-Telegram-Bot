@@ -1,8 +1,10 @@
+import http from "http";
 import { config } from "dotenv";
 import TelegramBot from "node-telegram-bot-api";
 
 config();
 
+const PORT = process.env.PORT || 3000;
 const token = process.env.TELEGRAM_BOT_TOKEN!;
 const bot = new TelegramBot(token, { polling: true });
 
@@ -32,3 +34,12 @@ Let’s go 🚀
 
   bot.sendMessage(chatId, welcomeMessage, { parse_mode: "Markdown" });
 });
+
+http
+  .createServer((_, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Mega Poster Telegram Bot is running.\n");
+  })
+  .listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+  });
